@@ -28,11 +28,50 @@ const {
       muted
       loop
       playsinline
-      class="absolute top-1/2 left-1/2 w-[200vw] h-[200vh] min-w-[200vw] min-h-[200vh] -translate-x-1/2 -translate-y-1/2 scale-[1.05] md:w-[150vw] md:h-[150vh] md:min-w-[150vw] md:min-h-[150vh] md:scale-[1.05] object-cover z-0 pointer-events-none"
-    ></video>
+      preload="auto"
+      class="absolute top-1/2 left-1/2 w-[200vw] h-[200vh] min-w-[200vw] min-h-[200vh] -translate-x-1/2 -translate-y-1/2 scale-[1.05] md:w-[150vw] md:h-[150vh] md:min-w-[150vw] md:min-h-[150vh] md:scale-[1.05] object-cover z-0 pointer-events-none opacity-0 transition-opacity duration-1000"
+      poster="/video-poster.jpg"
+      style="background-image: url('/video-poster.jpg'); background-size: cover; background-position: center;"
+    >
+      <source src="/video-fond.webm" type="video/webm" />
+      <source src="/video-fond.mp4" type="video/mp4" />
+      <img src="/video-poster.jpg" alt="Fond La Belle Brune" class="w-full h-full object-cover" />
+    </video>
     <div class="absolute inset-0 bg-black/50"></div>
   </div>
 </div>
+
+<script>
+  // Script pour forcer la lecture sur mobile et gérer la transition
+  document.addEventListener('DOMContentLoaded', () => {
+    const video = document.querySelector('video');
+    if (video) {
+      // Afficher la vidéo une fois chargée
+      video.addEventListener('loadeddata', () => {
+        video.style.opacity = '1';
+      });
+
+      // Essayer de lire la vidéo
+      const playPromise = video.play();
+      
+      if (playPromise !== undefined) {
+        playPromise.catch(error => {
+          // Si la lecture automatique échoue, essayer de lire après interaction
+          const playVideo = () => {
+            video.play().then(() => {
+              video.style.opacity = '1';
+            });
+            document.removeEventListener('touchstart', playVideo);
+            document.removeEventListener('click', playVideo);
+          };
+          
+          document.addEventListener('touchstart', playVideo);
+          document.addEventListener('click', playVideo);
+        });
+      }
+    }
+  });
+</script>
 
 <section class="relative min-h-screen flex items-center overflow-hidden">
   <div class="container mx-auto px-4 py-10 md:py-20 relative z-10">
