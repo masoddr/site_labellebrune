@@ -23,7 +23,29 @@ const { title, address, mapUrl } = Astro.props;
         referrerpolicy="no-referrer-when-downgrade"
         class="w-full h-full min-h-[350px] rounded-2xl"
         title="Carte Google Maps"
+        data-src={mapUrl}
+        data-loading="lazy"
       ></iframe>
     </div>
   </div>
-</section> 
+</section>
+
+<script>
+  // Chargement différé de l'iframe Google Maps
+  document.addEventListener('DOMContentLoaded', () => {
+    const iframe = document.querySelector('iframe[data-src]');
+    if (iframe) {
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            iframe.src = iframe.dataset.src;
+            observer.unobserve(iframe);
+          }
+        });
+      }, {
+        rootMargin: '50px'
+      });
+      observer.observe(iframe);
+    }
+  });
+</script> 
