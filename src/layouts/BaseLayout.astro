@@ -5,8 +5,8 @@ interface Props {
 }
 
 const { 
-  title = "Mon Site Web",
-  description = "Un site web moderne créé avec Astro"
+  title = "LaBelleBrune",
+  description = "Café de spécialité & brunch"
 } = Astro.props;
 ---
 
@@ -15,7 +15,7 @@ const {
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" type="image/png" href="/logo_labellebrune3.png" />
     
     <!-- SEO -->
     <title>{title}</title>
@@ -44,7 +44,7 @@ const {
     <!-- Global CSS -->
     <link rel="stylesheet" href="/styles/global.css" />
   </head>
-  <body class="font-sans antialiased">
+  <body class="font-sans antialiased bg-[#5a3e1b]">
     <slot />
   </body>
 </html> 

@@ -28,29 +28,29 @@ const {
 const today = new Date().toLocaleDateString('fr-FR', { weekday: 'long' });
 ---
 
-<section class="py-20 bg-white">
+<section class="py-20 bg-[#5a3e1b]/90">
   <div class="container mx-auto px-4">
     <div class="text-center mb-12">
-      <h2 class="text-4xl font-bold text-gray-900 mb-4">
+      <h2 class="text-4xl font-bold text-white mb-4">
         {title}
       </h2>
-      <p class="text-xl text-gray-600">
+      <p class="text-xl text-gray-200">
         Heure locale : {new Date().toLocaleTimeString('fr-FR', { timeZone: timezone })}
       </p>
     </div>
 
     <div class="max-w-2xl mx-auto">
-      <div class="bg-gray-50 rounded-xl p-8 shadow-lg">
+      <div class="bg-white/10 backdrop-blur-sm rounded-xl p-8 shadow-lg">
         <div class="space-y-4">
           {hours.map((schedule) => (
-            <div class="flex justify-between items-center py-2 border-b border-gray-200 last:border-0">
-              <span class={`font-medium ${schedule.day.toLowerCase() === today.toLowerCase() ? 'text-blue-600' : 'text-gray-700'}`}>
+            <div class="flex justify-between items-center py-2 border-b border-white/20 last:border-0">
+              <span class={`font-medium ${schedule.day.toLowerCase() === today.toLowerCase() ? 'text-yellow-300' : 'text-white'}`}>
                 {schedule.day}
                 {schedule.day.toLowerCase() === today.toLowerCase() && (
-                  <span class="ml-2 text-sm text-blue-600">(Aujourd'hui)</span>
+                  <span class="ml-2 text-sm text-yellow-300">(Aujourd'hui)</span>
                 )}
               </span>
-              <span class={schedule.isClosed ? 'text-red-500' : 'text-gray-600'}>
+              <span class={schedule.isClosed ? 'text-red-300' : 'text-gray-200'}>
                 {schedule.hours}
               </span>
             </div>

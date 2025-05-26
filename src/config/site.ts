@@ -116,20 +116,20 @@ export const defaultConfig: SiteConfig = {
   },
   location: {
     title: "Notre Localisation",
-    address: "123 rue Example, 75000 Paris",
-    mapUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2624.9916256937595!2d2.292292615509614!3d48.85837007928757!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47e66e2964e34e2d%3A0x8ddca9ee380ef7e0!2sTour%20Eiffel!5e0!3m2!1sfr!2sfr!4v1647874586708!5m2!1sfr!2sfr"
+    address: "31 Rue Pharaon, 31000 Toulouse",
+    mapUrl: "https://www.google.com/maps/embed?pb=!1m23!1m12!1m3!1d681.8279356223373!2d1.4435910478987883!3d43.59642817429952!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m8!3e6!4m0!4m5!1s0x12aebd354cd82053%3A0x9114815fa5d578fd!2s31%20Rue%20Pharaon%2C%2031000%20Toulouse!3m2!1d43.596462599999995!2d1.4441392!5e0!3m2!1sfr!2sfr!4v1748268790996!5m2!1sfr!2sfr"
   },
   businessHours: {
     title: "Horaires d'ouverture",
     timezone: "Europe/Paris",
     hours: [
-      { day: "Lundi", hours: "9h00 - 18h00" },
-      { day: "Mardi", hours: "9h00 - 18h00" },
-      { day: "Mercredi", hours: "9h00 - 18h00" },
-      { day: "Jeudi", hours: "9h00 - 18h00" },
-      { day: "Vendredi", hours: "9h00 - 18h00" },
-      { day: "Samedi", hours: "10h00 - 16h00" },
-      { day: "Dimanche", hours: "Fermé", isClosed: true }
+      { day: "Lundi", hours: "8h30 - 17h00" },
+      { day: "Mardi", hours: "8h30 - 17h00" },
+      { day: "Mercredi", hours: "8h30 - 17h00" },
+      { day: "Jeudi", hours: "8h30 - 17h00" },
+      { day: "Vendredi", hours: "8h30 - 17h00" },
+      { day: "Samedi", hours: "8h30 - 18h00" },
+      { day: "Dimanche", hours: "10h00 - 16h00" }
     ]
   },
   pricing: {
