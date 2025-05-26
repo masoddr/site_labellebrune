@@ -13,12 +13,12 @@ const menuItems = [
   <nav class="container mx-auto px-4 py-4">
     <div class="flex justify-between items-center">
       <!-- Logo -->
-      <a href="/" class="text-2xl font-bold text-white flex items-center">
+      <a href="/" class="text-2xl font-bold text-white flex items-center" aria-label="Accueil La Belle Brune">
         <picture>
           <source srcset="/logo_labellebrune.webp" type="image/webp" />
           <img 
             src="/logo_labellebrune.png" 
-            alt="La Belle Brune" 
+            alt="Logo La Belle Brune - Accueil" 
             width="160" height="48"
             class="h-16 md:h-24 w-auto"
             fetchpriority="high"
@@ -41,11 +41,13 @@ const menuItems = [
             </a>
           ))}
           <div class="flex items-center space-x-4 ml-8">
-            <a href="https://www.instagram.com/labellebrune.toulouse" target="_blank" rel="noopener noreferrer">
+            <a href="https://www.instagram.com/labellebrune.toulouse" target="_blank" rel="noopener noreferrer" aria-label="Instagram La Belle Brune">
               <svg class="w-7 h-7 text-gray-200 hover:text-pink-500 transition-colors" fill="currentColor" viewBox="0 0 24 24"><path d="M7.75 2h8.5A5.75 5.75 0 0 1 22 7.75v8.5A5.75 5.75 0 0 1 16.25 22h-8.5A5.75 5.75 0 0 1 2 16.25v-8.5A5.75 5.75 0 0 1 7.75 2zm0 1.5A4.25 4.25 0 0 0 3.5 7.75v8.5A4.25 4.25 0 0 0 7.75 20.5h8.5A4.25 4.25 0 0 0 20.5 16.25v-8.5A4.25 4.25 0 0 0 16.25 3.5h-8.5zm4.25 2.25a5.25 5.25 0 1 1 0 10.5a5.25 5.25 0 0 1 0-10.5zm0 1.5a3.75 3.75 0 1 0 0 7.5a3.75 3.75 0 0 0 0-7.5zm5.25 1.25a1 1 0 1 1-2 0a1 1 0 0 1 2 0z"/></svg>
+              <span class="sr-only">Instagram La Belle Brune</span>
             </a>
-            <a href="https://www.facebook.com/labellebrune.toulouse" target="_blank" rel="noopener noreferrer">
+            <a href="https://www.facebook.com/labellebrune.toulouse" target="_blank" rel="noopener noreferrer" aria-label="Facebook La Belle Brune">
               <svg class="w-7 h-7 text-gray-200 hover:text-blue-600 transition-colors" fill="currentColor" viewBox="0 0 24 24"><path d="M22.675 0h-21.35C.595 0 0 .592 0 1.326v21.348C0 23.408.595 24 1.325 24h11.495v-9.294H9.692v-3.622h3.128V8.413c0-3.1 1.893-4.788 4.659-4.788c1.325 0 2.463.099 2.797.143v3.24l-1.918.001c-1.504 0-1.797.715-1.797 1.763v2.313h3.587l-.467 3.622h-3.12V24h6.116C23.406 24 24 23.408 24 22.674V1.326C24 .592 23.406 0 22.675 0"/></svg>
+              <span class="sr-only">Facebook La Belle Brune</span>
             </a>
           </div>
         </div>
@@ -97,10 +99,10 @@ const menuItems = [
           </a>
         ))}
         <div class="flex items-center gap-6 mt-8">
-          <a href="https://www.instagram.com/labellebrune.toulouse" target="_blank" rel="noopener noreferrer">
+          <a href="https://www.instagram.com/labellebrune.toulouse" target="_blank" rel="noopener noreferrer" aria-label="Instagram La Belle Brune">
             <svg class="w-8 h-8 text-white hover:text-pink-500 transition-colors" fill="currentColor" viewBox="0 0 24 24"><path d="M7.75 2h8.5A5.75 5.75 0 0 1 22 7.75v8.5A5.75 5.75 0 0 1 16.25 22h-8.5A5.75 5.75 0 0 1 2 16.25v-8.5A5.75 5.75 0 0 1 7.75 2zm0 1.5A4.25 4.25 0 0 0 3.5 7.75v8.5A4.25 4.25 0 0 0 7.75 20.5h8.5A4.25 4.25 0 0 0 20.5 16.25v-8.5A4.25 4.25 0 0 0 16.25 3.5h-8.5zm4.25 2.25a5.25 5.25 0 1 1 0 10.5a5.25 5.25 0 0 1 0-10.5zm0 1.5a3.75 3.75 0 1 0 0 7.5a3.75 3.75 0 0 0 0-7.5zm5.25 1.25a1 1 0 1 1-2 0a1 1 0 0 1 2 0z"/></svg>
           </a>
-          <a href="https://www.facebook.com/labellebrune.toulouse" target="_blank" rel="noopener noreferrer">
+          <a href="https://www.facebook.com/labellebrune.toulouse" target="_blank" rel="noopener noreferrer" aria-label="Facebook La Belle Brune">
             <svg class="w-8 h-8 text-white hover:text-blue-600 transition-colors" fill="currentColor" viewBox="0 0 24 24"><path d="M22.675 0h-21.35C.595 0 0 .592 0 1.326v21.348C0 23.408.595 24 1.325 24h11.495v-9.294H9.692v-3.622h3.128V8.413c0-3.1 1.893-4.788 4.659-4.788c1.325 0 2.463.099 2.797.143v3.24l-1.918.001c-1.504 0-1.797.715-1.797 1.763v2.313h3.587l-.467 3.622h-3.12V24h6.116C23.406 24 24 23.408 24 22.674V1.326C24 .592 23.406 0 22.675 0"/></svg>
           </a>
         </div>
@@ -117,6 +119,17 @@ const menuItems = [
     opacity: 1 !important;
     pointer-events: auto !important;
     transition: opacity 0.4s, transform 0.4s;
+  }
+  .sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0,0,0,0);
+    white-space: nowrap;
+    border: 0;
   }
 </style>
 

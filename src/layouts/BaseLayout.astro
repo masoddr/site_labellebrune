@@ -2,11 +2,15 @@
 interface Props {
   title?: string;
   description?: string;
+  canonicalURL?: string;
+  image?: string;
 }
 
 const { 
-  title = "LaBelleBrune",
-  description = "Café de spécialité & brunch"
+  title = "La Belle Brune - Café & Brunch à Toulouse",
+  description = "Découvrez La Belle Brune, votre café de spécialité et brunch à Toulouse. Plats maison ultra gourmands, café d'exception et ambiance chaleureuse.",
+  canonicalURL = Astro.url.href,
+  image = "/og-image.jpg"
 } = Astro.props;
 
 import ScrollToTop from '../components/ScrollToTop.astro';
@@ -22,18 +26,29 @@ import ScrollToTop from '../components/ScrollToTop.astro';
     <!-- SEO -->
     <title>{title}</title>
     <meta name="description" content={description} />
+    <link rel="canonical" href={canonicalURL} />
     
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website" />
+    <meta property="og:url" content={canonicalURL} />
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
-    <meta property="og:image" content="/og-image.jpg" />
+    <meta property="og:image" content={image} />
+    <meta property="og:site_name" content="La Belle Brune" />
+    <meta property="og:locale" content="fr_FR" />
     
     <!-- Twitter -->
-    <meta property="twitter:card" content="summary_large_image" />
-    <meta property="twitter:title" content={title} />
-    <meta property="twitter:description" content={description} />
-    <meta property="twitter:image" content="/og-image.jpg" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={image} />
+    
+    <!-- Additional SEO -->
+    <meta name="robots" content="index, follow" />
+    <meta name="keywords" content="café, brunch, Toulouse, La Belle Brune, café de spécialité, plats maison" />
+    <meta name="author" content="La Belle Brune" />
+    <meta name="geo.region" content="FR-31" />
+    <meta name="geo.placename" content="Toulouse" />
     
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
