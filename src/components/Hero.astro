@@ -29,7 +29,7 @@ const {
       loop
       playsinline
       preload="auto"
-      class="absolute top-1/2 left-1/2 w-[200vw] h-[200vh] min-w-[200vw] min-h-[200vh] -translate-x-1/2 -translate-y-1/2 scale-[1.05] md:w-[150vw] md:h-[150vh] md:min-w-[150vw] md:min-h-[150vh] md:scale-[1.05] object-cover z-0 pointer-events-none opacity-0 transition-opacity duration-1000"
+      class="absolute top-1/2 left-1/2 w-[120vw] h-[120vh] min-w-[120vw] min-h-[120vh] -translate-x-1/2 -translate-y-1/2 scale-[0.95] md:w-[100vw] md:h-[100vh] md:min-w-[100vw] md:min-h-[100vh] md:scale-[1] object-cover z-0 pointer-events-none opacity-0 transition-opacity duration-1000"
       poster="/video-poster.jpg"
       style="background-image: url('/video-poster.jpg'); background-size: cover; background-position: center;"
     >
@@ -157,5 +157,11 @@ const {
   }
   .animation-delay-4000 {
     animation-delay: 4s;
+  }
+  video::-webkit-media-controls {
+    display: none !important;
+  }
+  video::-webkit-media-controls-start-playback-button {
+    display: none !important;
   }
 </style> 
