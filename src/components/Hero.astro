@@ -17,7 +17,7 @@ const {
 ---
 
 <!-- Vidéo de fond YouTube fixe -->
-<div class="fixed inset-0 w-full h-full z-0 pointer-events-none overflow-hidden">
+<div class="fixed inset-0 w-screen h-screen z-0 pointer-events-none overflow-hidden">
   <div class="absolute inset-0 w-full h-full">
     <iframe
       src="https://www.youtube.com/embed/-3sqBbC1moM?autoplay=1&mute=1&loop=1&playlist=-3sqBbC1moM&controls=0&showinfo=0&modestbranding=1&rel=0"
@@ -25,7 +25,7 @@ const {
       frameborder="0"
       allow="autoplay; encrypted-media"
       allowfullscreen
-      style="position:absolute;top:50%;left:50%;width:150vw;height:150vh;min-width:150vw;min-height:150vh;transform:translate(-50%,-50%) scale(1.2);object-fit:cover;z-index:0;pointer-events:none;@media (max-width: 768px) {width:200vw;height:200vh;min-width:200vw;min-height:200vh;transform:translate(-50%,-50%) scale(1.5);}"
+      class="absolute top-1/2 left-1/2 w-[200vw] h-[200vh] min-w-[200vw] min-h-[200vh] -translate-x-1/2 -translate-y-1/2 scale-[1.7] md:w-[150vw] md:h-[150vh] md:min-w-[150vw] md:min-h-[150vh] md:scale-[1.2] object-cover z-0 pointer-events-none"
     ></iframe>
     <div class="absolute inset-0 bg-black/50"></div>
   </div>
@@ -45,9 +45,6 @@ const {
           des plats faits maison<br/>
           & des boissons qui font voyager.
         </h2>
-        <p class="text-lg md:text-xl text-yellow-200 font-medium mb-6">
-          Café de spécialité & brunch
-        </p>
       </div>
     </div>
   </div>

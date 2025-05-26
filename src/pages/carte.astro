@@ -6,17 +6,48 @@ import Footer from '../components/Footer.astro';
 
 <BaseLayout>
   <Header />
-  <main class="min-h-screen py-12 bg-[#5a3e1b]">
-    <h1 class="text-4xl md:text-5xl font-bold text-center text-white mb-10">La carte</h1>
+  <main class="min-h-screen py-12 pt-32 bg-[#5a3e1b]">
     <div class="container mx-auto px-4">
       <div class="grid gap-8 grid-cols-1 md:grid-cols-2">
-        <img src="/carte_1.png" alt="Carte page 1" class="w-full rounded-xl shadow-lg bg-white p-2 object-contain" loading="lazy" />
-        <img src="/carte_2.png" alt="Carte page 2" class="w-full rounded-xl shadow-lg bg-white p-2 object-contain" loading="lazy" />
-        <img src="/carte_3.png" alt="Carte page 3" class="w-full rounded-xl shadow-lg bg-white p-2 object-contain" loading="lazy" />
-        <img src="/carte_4.png" alt="Carte page 4" class="w-full rounded-xl shadow-lg bg-white p-2 object-contain" loading="lazy" />
-        <img src="/carte_5.png" alt="Carte page 5" class="w-full rounded-xl shadow-lg bg-white p-2 object-contain md:col-span-2" loading="lazy" />
+        <img src="/carte_1.png" alt="Carte page 1" class="w-full rounded-xl shadow-lg bg-white p-2 object-contain cursor-pointer" loading="lazy" onclick="openModal('/carte_1.png')" />
+        <img src="/carte_2.png" alt="Carte page 2" class="w-full rounded-xl shadow-lg bg-white p-2 object-contain cursor-pointer" loading="lazy" onclick="openModal('/carte_2.png')" />
+        <img src="/carte_3.png" alt="Carte page 3" class="w-full rounded-xl shadow-lg bg-white p-2 object-contain cursor-pointer" loading="lazy" onclick="openModal('/carte_3.png')" />
+        <img src="/carte_4.png" alt="Carte page 4" class="w-full rounded-xl shadow-lg bg-white p-2 object-contain cursor-pointer" loading="lazy" onclick="openModal('/carte_4.png')" />
+        <img src="/carte_5.png" alt="Carte page 5" class="w-full rounded-xl shadow-lg bg-white p-2 object-contain md:col-span-2 cursor-pointer" loading="lazy" onclick="openModal('/carte_5.png')" />
       </div>
     </div>
+    <!-- Modal pour afficher la carte en grand -->
+    <div id="carte-modal" class="fixed inset-0 bg-black/80 z-[100] flex items-center justify-center opacity-0 pointer-events-none transition-opacity duration-300">
+      <button id="close-carte-modal" class="absolute top-6 right-6 text-white hover:text-yellow-400 text-4xl focus:outline-none z-20" aria-label="Fermer">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+        </svg>
+      </button>
+      <img id="carte-modal-img" src="" alt="Carte en grand" class="max-h-[80vh] max-w-[90vw] rounded-2xl shadow-2xl border-4 border-white object-contain z-10" />
+    </div>
+    <script type="module">
+      const modal = document.getElementById('carte-modal');
+      const modalImg = document.getElementById('carte-modal-img');
+      const closeBtn = document.getElementById('close-carte-modal');
+      function openModal(src) {
+        modalImg.src = src;
+        modal.classList.add('opacity-100');
+        modal.classList.remove('opacity-0', 'pointer-events-none');
+        modal.classList.add('pointer-events-auto');
+        document.body.style.overflow = 'hidden';
+      }
+      function closeModal() {
+        modal.classList.remove('opacity-100', 'pointer-events-auto');
+        modal.classList.add('opacity-0', 'pointer-events-none');
+        document.body.style.overflow = '';
+        setTimeout(() => { modalImg.src = ''; }, 300);
+      }
+      closeBtn.addEventListener('click', closeModal);
+      modal.addEventListener('click', (e) => {
+        if (e.target === modal) closeModal();
+      });
+      window.openModal = openModal;
+    </script>
   </main>
   <Footer />
 </BaseLayout> 

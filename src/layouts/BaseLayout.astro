@@ -8,6 +8,8 @@ const {
   title = "LaBelleBrune",
   description = "Café de spécialité & brunch"
 } = Astro.props;
+
+import ScrollToTop from '../components/ScrollToTop.astro';
 ---
 
 <!DOCTYPE html>
@@ -46,5 +48,6 @@ const {
   </head>
   <body class="font-sans antialiased bg-[#5a3e1b]">
     <slot />
+    <ScrollToTop />
   </body>
 </html> 

@@ -1,27 +1,6 @@
 ---
 const currentYear = new Date().getFullYear();
 
-const footerLinks = {
-  services: [
-    { text: 'Développement Web', href: '/services/web-dev' },
-    { text: 'Design UI/UX', href: '/services/design' },
-    { text: 'Marketing Digital', href: '/services/marketing' },
-    { text: 'Consulting', href: '/services/consulting' }
-  ],
-  entreprise: [
-    { text: 'À propos', href: '/about' },
-    { text: 'Carrières', href: '/careers' },
-    { text: 'Blog', href: '/blog' },
-    { text: 'Contact', href: '/contact' }
-  ],
-  legal: [
-    { text: 'Mentions légales', href: '/mentions-legales' },
-    { text: 'Politique de confidentialité', href: '/confidentialite' },
-    { text: 'CGU', href: '/cgu' },
-    { text: 'Cookies', href: '/cookies' }
-  ]
-};
-
 const socialLinks = [
   { 
     name: 'Instagram',
@@ -53,9 +32,8 @@ const socialLinks = [
       <div class="text-center">
         <h3 class="text-xl font-semibold mb-4">Contact</h3>
         <p class="mb-2">La Belle Brune</p>
-        <p class="mb-2">123 Rue de la Paix</p>
+        <p class="mb-2">31 Rue Pharaon</p>
         <p class="mb-2">31000 Toulouse</p>
-        <p class="mb-2">Tél : 05 XX XX XX XX</p>
       </div>
 
       <!-- Réseaux sociaux -->
@@ -78,16 +56,3 @@ const socialLinks = [
     </div>
   </div>
 </footer>
-
-<script>
-  // Newsletter form handling
-  const form = document.querySelector('form');
-  form?.addEventListener('submit', (e) => {
-    e.preventDefault();
-    const email = form.querySelector('input[type="email"]')?.value;
-    // Here you would typically send this to your backend
-    console.log('Newsletter subscription:', email);
-    alert('Merci pour votre inscription !');
-    form.reset();
-  });
-</script> 
